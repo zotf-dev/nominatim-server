@@ -11,7 +11,7 @@ def get_real_addresses(address: str):
     """
     try:
         url = "https://nominatim.openstreetmap.org/search"
-        params = {"q": address, "format": "json", "limit": 100}
+        params = {"q": address, "format": "json", "limit": 100, "accept-language": "en"}
         headers = {"User-Agent": "address-checker"}  # Required by Nominatim
         
         response = requests.get(url, params=params, headers=headers, timeout=5)
